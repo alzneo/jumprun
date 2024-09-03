@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net4</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Platforms>AnyCPU</Platforms>
+	</PropertyGroup>
+</Project>
