@@ -1,6 +1,5 @@
 ﻿// TO DO:
-// * Handle link arguments and icon
-// * Handle .lnk with custom targets (UWP/Store apps)
+// * Handle icons
 
 using System;
 using System.Collections.Generic;
@@ -13,7 +12,7 @@ namespace jr
 {
     public class App : Application
     {
-        static string[] extensions = new string[] { ".exe", ".bat", ".cmd" };
+        static string[] extensions = new string[] { ".exe", ".bat", ".cmd", ".lnk" };
 
         [STAThread]
         public static void Main() => new App().Run();
@@ -46,11 +45,11 @@ namespace jr
                 var item = i;
                 var ext = Path.GetExtension(item).ToLowerInvariant();
 
-                if (ext == ".lnk")
-                {
-                    item = NativeMethods.ResolveShortcut(i);
-                    ext = Path.GetExtension(item).ToLowerInvariant();
-                }
+                //if (ext == ".lnk")
+                //{
+                //    item = NativeMethods.ResolveShortcut(i);
+                //    ext = Path.GetExtension(item).ToLowerInvariant();
+                //}
 
                 if (!extensions.Contains(ext))
                     continue;
